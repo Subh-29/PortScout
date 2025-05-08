@@ -13,9 +13,12 @@ def scanPort(port, target):
 
         if result == 0:
             print(f"[+] Port {port} is OPEN")
-        else:
-            print(f"[-] Port {port} is CLOSED!")
+        # else:
+        #     print(f"[-] Port {port} is CLOSED!")
         s.close()
     except KeyboardInterrupt:
         pass
 
+with TPE(max_workers=300) as executor:
+    for port in range(1, 1024):
+        executor.submit(scanPort, port, target)
