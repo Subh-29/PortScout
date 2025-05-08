@@ -1,4 +1,5 @@
 import socket
+import ssl
 
 from concurrent.futures import ThreadPoolExecutor as TPE
 
@@ -15,6 +16,16 @@ def scanPort(port, target):
             print(f"[+] Port {port} is OPEN")
         # else:
         #     print(f"[-] Port {port} is CLOSED!")
+        try:
+            if port == 80:
+                s.send(b"HEAD / HTTP/1.0\r\n\r\n")
+            try:
+                banner = s.recv(1024)
+                print(f"====> Banner on Port {port} : {banner.decode(errors='ignore').strip()}")
+            except:
+                pass
+        except:
+            pass
         s.close()
     except KeyboardInterrupt:
         pass
