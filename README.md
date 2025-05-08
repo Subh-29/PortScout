@@ -129,13 +129,4 @@ Pull requests, issues, and ideas are welcome!
 
 ---
 
-## 📜 License
 
-MIT License – free to use, modify, and distribute responsibly.
-
-```
-
----
-
-You can copy-paste this as your `README.md`. If you want me to also create a repo icon/banner or add shields (badges), just say the word!
-```
