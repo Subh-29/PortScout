@@ -78,7 +78,7 @@ def scanPort(port, target):
     except KeyboardInterrupt:
         return -1
     except socket.timeout:
-        print(f"{Fore.YELLOW}[!] Connection Timeout")
+        print(f"{Fore.RED}[!] Connection Timeout")
         return -1
     except socket.gaierror:
         print(f"{Fore.RED}[-] Hostname could not be resolved")
